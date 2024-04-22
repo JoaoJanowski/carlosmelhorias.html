@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Burger King - Responsabilidade Social Corporativa</title>
+<style>
+/* CSS */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #ffae00;
+  padding: 20px;
+  color: #fff;
+}
+
+header h1 {
+  margin: 0;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 20px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+main {
+  padding: 20px;
+}
+
+section {
+  margin-bottom: 20px;
+}
+
+footer {
+  background-color: orange;
+  color: #fff;
+  padding: 10px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
+
+/* JavaScript */
+#initiatives {
+  display: none;
+}
+
+button {
+  background-color: #ffae00;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #ffa300;
+}
+</style>
+</head>
+<body>
+<header>
+  <img src="https://i.pinimg.com/originals/88/0d/4f/880d4f0de6c0af5b28d41ca6db2fc4ef.png" style="height: 130px;">
+  <h1>Burger King</h1>
+  <nav>
+    <ul>
+      <li><a href="#"><strong>Home</strong></a></li>
+      <li><a href="#"><strong>Sobre</strong></a></li>
+      <li><a href="#"><strong>Responsabilidade Social</strong></a></li>
+      <li><a href="#"><strong>Contato</strong></a></li>
+    </ul>
+  </nav>
+</header>
+<main>
+  <section>
+    <h2 style="color:red">Nossa Responsabilidade Social Corporativa</h2>
+    <p id="message" style="color:orange">Clique no botão para saber mais sobre nossas iniciativas.</p>
+    <button onclick="showInitiatives()"><strong>Mostrar Iniciativas</strong></button>
+  </section>
+  <section id="initiatives">
+    <h2 style="color:red">Nossas Iniciativas</h2>
+    <ul>
+      <li style="color:orange">Programas de reciclagem para reduzir resíduos e promover a sustentabilidade ambiental.</li>
+      <li style="color:orange">Parcerias com organizações locais para apoiar causas sociais e comunitárias.</li>
+      <li style="color:orange">Compromisso com práticas trabalhistas justas e seguras em todas as etapas de nossa cadeia de suprimentos.</li>
+    </ul>
+  </section>
+</main>
+<footer>
+  <p>&copy; 2024 Burger King. Todos os direitos reservados.</p>
+</footer>
+
+<script>
+function showInitiatives() {
+  var initiativesSection = document.getElementById("initiatives");
+  var message = document.getElementById("message");
+
+  if (initiativesSection.style.display === "none") {
+    initiativesSection.style.display = "block";
+    message.textContent = "Clique novamente para ocultar as iniciativas.";
+  } else {
+    initiativesSection.style.display = "none";
+    message.textContent = "Clique no botão para saber mais sobre nossas iniciativas.";
+  }
+}
+</script>
+
+</body>
+</html>
