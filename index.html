@@ -1,251 +1,100 @@
+
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Burger King</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-            padding: 20px;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
             background-color: #f5f5f5;
         }
 
-        header {
+        .login-container {
+            width: 300px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
             text-align: center;
-            background-color: #1a1a1a; /* Alteração 1: Cor do cabeçalho */
-            color: #fff;
-            padding: 10px;
-            margin-bottom: 20px;
-            position: fixed; /* Alteração 4: Menu de navegação fixo */
-            top: 0;
-            width: 100%;
-            z-index: 1000; /* Certifique-se de que o menu de navegação fique acima do conteúdo */
+            color: #d9534f;
         }
 
-        nav {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: #5bc0de;
-            margin: 0 15px;
-            font-weight: bold;
-        }
-
-        section {
-            margin-bottom: 20px;
-        }
-
-        article {
-            margin-bottom: 40px;
-        }
-
-        h1, h2, h3 {
-            color: #5bc0de;
-        }
-
-        p {
-            line-height: 1.6;
-        }
-
-        .post-date {
-            font-size: 0.8em;
-            color: #777;
-        }
-
-        footer {
-            text-align: center;
-            padding: 10px;
-            background-color: #8B0000; /* Alteração 1: Cor do rodapé */
-            color: #fff;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            z-index: 1000; /* Certifique-se de que o rodapé fique acima do conteúdo */
-        }
-
-        img {
-            max-width: 100%;
-            height: auto;
+        label {
             display: block;
-            margin: 0 auto;
+            margin: 10px 0 5px;
+            color: #d9534f;
         }
 
-        /* Alteração 2: Botão de destaque */
-        .highlight-button {
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
             background-color: #d9534f;
             color: #fff;
-            padding: 10px 20px;
             border: none;
             border-radius: 4px;
             cursor: pointer;
-            font-weight: bold;
-            text-transform: uppercase;
-            transition: background-color 0.3s ease;
         }
 
-        .highlight-button:hover {
+        button:hover {
             background-color: #c9302c;
         }
 
-        /* Alteração 3: Ícones de redes sociais */
-        .social-icons {
+        .error-message {
+            color: #ff0000;
+            margin-top: 10px;
             text-align: center;
-            margin-top: 20px;
-        }
-
-        .social-icons a {
-            margin: 0 10px;
-            color: #fff;
-            font-size: 24px;
-        }
-
-        /* Alteração 5: Animação de rolar para cima */
-        #backToTop {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: #5bc0de;
-            color: #fff;
-            padding: 10px;
-            border-radius: 50%;
-            cursor: pointer;
-            display: none;
-        }
-
-        /* Alteração 6: Vídeo de fundo */
-        .video-background {
-            position: relative;
-            width: 100%;
-            height: 400px;
-            overflow: hidden;
-            margin-bottom: 20px;
-        }
-
-        .video-background video {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        /* Alteração 7: Cards */
-        .card {
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            margin-bottom: 20px;
-        }
-
-        /* Alteração 8: Formulário de contato expandido */
-        .contact-form label {
-            display: block;
-            margin-bottom: 8px;
-            color: #1a1a1a;
-        }
-
-        /* Alteração 9: Barra de progresso */
-        #progressBar {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 5px;
-            background-color: #d9534f;
-            z-index: 999;
         }
     </style>
-    <title>Blog e Notícias Burger King</title>
 </head>
 <body>
-    <header>
-        <h1>Blog e Notícias Burger King</h1>
-    </header>
+    <div class="login-container">
+        <h1>Login - Burger King</h1>
+        <form id="loginForm" onsubmit="return validateForm()">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
 
-    <nav>
-        <a href="#featured-promotions">Promoções</a>
-        <a href="#contact">Contato</a>
-    </nav>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
 
-    <section>
-        <article>
-            <h2>Novo Lanche Chega ao Menu</h2>
-            <p>O cliente é muito importante, o cliente será seguido pelo cliente. Ninguém é sempre justo ou livre.</p>
-            <p class="post-date">Publicado em: 01 de Março de 2024</p>
-        </article>
-
-        <article>
-            <h2>Parceria com Novo Fornecedor de Ingredientes</h2>
-            <p>Curabitur eu apenas em elit eleifend hendrerit ou gratuitamente. É para estar bêbado, como esperado.</p>
-            <p class="post-date">Publicado em: 15 de Fevereiro de 2024</p>
-        </article>
-    </section>
-
-    <section id="featured-promotions" class="card"> <!-- Alteração 7: Adição de cards -->
-        <h2>Promoções em Destaque</h2>
-        <p></p>
-        <img src="https://conteudo.imguol.com.br/c/noticias/e3/2019/07/01/burger-king-hash-fries-1562006988899_v2_900x506.jpg.webp">
-    </section>
-
-    <section id="contact" class="contact-form">
-        <h2>Entre em Contato</h2>
-        <form>
-            <label for="name">Nome:</label>
-            <input type="text" id="name" name="name" required>
-
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-
-            <label for="phone">Telefone:</label> <!-- Alteração 8: Adição de campo de telefone -->
-            <input type="tel" id="phone" name="phone" required>
-
-            <label for="subject">Assunto:</label> <!-- Alteração 8: Adição de campo de assunto -->
-            <input type="text" id="subject" name="subject" required>
-
-            <label for="message">Mensagem:</label>
-            <textarea id="message" name="message" rows="4" required></textarea>
-
-            <button type="submit">Enviar</button>
+            <button type="submit">Login</button>
         </form>
-    </section>
 
-    <div class="social-icons"> <!-- Alteração 3: Adição de ícones de redes sociais -->
-        <a href="#"><img src="https://image.flaticon.com/icons/png/512/1384/1384021.png" alt="Facebook"></a>
-        <a href="#"><img src="https://image.flaticon.com/icons/png/512/2111/2111819.png" alt="Twitter"></a>
-        <a href="#"><img src="https://image.flaticon.com/icons/png/512/2111/2111614.png" alt="Instagram"></a>
+        <div class="error-message" id="errorMessage"></div>
     </div>
 
-    <footer>
-        <p>&copy; 2024 Burger King. Todos os direitos reservados.</p>
-    </footer>
-
-    <div id="backToTop" onclick="scrollToTop()">↑</div> <!-- Alteração 5: Adição de botão de rolar para cima -->
-
-    <div id="progressBar"></div> <!-- Alteração 9: Adição de barra de progresso -->
-
     <script>
-        // Alteração 5: Função para rolar suavemente para o topo
-        function scrollToTop() {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        }
+        function validateForm() {
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
 
-        // Alteração 9: Atualização da barra de progresso conforme o usuário rola a página
-        window.onscroll = function() {progressBar()};
-
-        function progressBar() {
-            var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-            var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            var scrolled = (winScroll / height) * 100;
-            document.getElementById("progressBar").style.width = scrolled + "%";
+           
+            if (username === 'example' && password === 'password') {
+                
+                alert('Login successful!');
+                return true;
+            } else {
+                document.getElementById('errorMessage').innerHTML = 'Invalid username or password';
+                return false;
+            }
         }
     </script>
 </body>
