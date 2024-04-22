@@ -1,97 +1,93 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - Burger King</title>
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            background-color: #f5f5f5;
-        }
-
-        .login-container {
-            width: 300px;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        h1 {
-            text-align: center;
-            color: #d9534f;
-        }
-
-        label {
-            display: block;
-            margin: 10px 0 5px;
-            color: #d9534f;
-        }
-
-        input {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 15px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-
-        button {
-            width: 100%;
-            padding: 10px;
-            background-color: #d9534f;
-            color: #fff;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-
-        button:hover {
-            background-color: #c9302c;
-        }
-
-        .error-message {
-            color: #ff0000;
-            margin-top: 10px;
-            text-align: center;
-        }
-    </style>
+    <title>Burger King</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="login-container">
-        <h1>Login - Burger King</h1>
-        <form id="loginForm" onsubmit="return validateForm()">
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username" required>
 
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required>
+    <header>
+        <div class="logo-container">
+            <img src="logo.png" alt="Burger King Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#locations">Localizações</a></li>
+                <li><a href="#contact">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
 
-            <button type="submit">Login</button>
+    <section id="hero">
+        <div class="hero-content">
+            <h1>Bem-vindo ao Burger King</h1>
+            <p>Descubra nossos deliciosos hambúrgueres, batatas fritas crocantes e muito mais!</p>
+            <a href="#menu" class="btn">Ver Menu</a>
+        </div>
+    </section>
+
+    <section id="menu">
+        <h2>Menu</h2>
+        <div class="menu-item">
+            <img src="burger.jpg" alt="Burger">
+            <h3>Big King</h3>
+            <p>Dois hambúrgueres grelhados, queijo, alface, cebola, picles e molho especial, tudo no pão com gergelim.</p>
+            <span class="price">R$ 15,90</span>
+        </div>
+        <div class="menu-item">
+            <img src="chicken-burger.jpg" alt="Chicken Burger">
+            <h3>Chicken Royale</h3>
+            <p>Peito de frango grelhado, alface, tomate, queijo e maionese em um pão de hambúrguer.</p>
+            <span class="price">R$ 12,90</span>
+        </div>
+        <!-- Mais itens do menu aqui -->
+    </section>
+
+    <section id="locations">
+        <h2>Localizações</h2>
+        <p>Encontre o Burger King mais próximo de você.</p>
+        <div class="map">
+            <!-- Mapa de localizações aqui -->
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contato</h2>
+        <p>Entre em contato conosco para perguntas, comentários ou sugestões.</p>
+        <div class="contact-info">
+            <div class="contact-item">
+                <h3>Atendimento ao Cliente</h3>
+                <p><strong>Telefone:</strong> 55 41-99955-7043</p>
+                <p><strong>Email:</strong> atendimento@burgerking.com</p>
+            </div>
+            <div class="contact-item">
+                <h3>Assessoria de Imprensa</h3>
+                <p><strong>Telefone:</strong> 55 41-99955-7044</p>
+                <p><strong>Email:</strong> imprensa@burgerking.com</p>
+            </div>
+        </div>
+        <form action="#" method="post" class="contact-form" id="contactForm">
+            <input type="text" name="name" id="name" placeholder="Seu Nome" required>
+            <input type="email" name="email" id="email" placeholder="Seu Email" required>
+            <textarea name="message" id="message" placeholder="Sua Mensagem" rows="4" required></textarea>
+            <button type="submit">Enviar Mensagem</button>
         </form>
+    </section>
 
-        <div class="error-message" id="errorMessage"></div>
-    </div>
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Burger King. Todos os direitos reservados.</p>
+            <ul class="social-links">
+                <li><a href="#"><img src="facebook.png" alt="Facebook"></a></li>
+                <li><a href="#"><img src="twitter.png" alt="Twitter"></a></li>
+                <li><a href="#"><img src="instagram.png" alt="Instagram"></a></li>
+            </ul>
+        </div>
+    </footer>
 
-    <script>
-        function validateForm() {
-            var username = document.getElementById('username').value;
-            var password = document.getElementById('password').value;
-
-            if (username === 'example' && password === 'password') {
-                return true;
-            } else {
-                document.getElementById('errorMessage').innerHTML = 'Invalid username or password';
-                return false;
-            }
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
