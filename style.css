@@ -1,163 +1,81 @@
-/* Reset CSS */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
+/* Estilos gerais */
 body {
     font-family: Arial, sans-serif;
-    background-color: #ec1c24; /* Vermelho característico do Burger King */
-    color: #fff;
+    margin: 0;
+    padding: 0;
 }
 
 header {
-    background-color: #004097; /* Azul característico do Burger King */
-    padding: 20px 0;
-    text-align: center;
-}
-
-.logo-container img {
-    max-width: 200px;
+    background-color: #ED1C24; /* Vermelho do Burger King */
+    color: white;
+    padding: 20px;
 }
 
 nav ul {
     list-style-type: none;
+    margin: 0;
+    padding: 0;
 }
 
 nav ul li {
-    display: inline-block;
+    display: inline;
     margin-right: 20px;
 }
 
 nav ul li a {
+    color: white;
     text-decoration: none;
-    color: #fff;
-    font-weight: bold;
 }
 
 section {
-    padding: 40px 20px;
-    text-align: center;
+    padding: 20px;
 }
 
-#hero {
-    background-image: url('hero-bg.jpg'); /* Imagem de fundo */
-    background-size: cover;
-    color: #fff;
+footer {
+    background-color: #ED1C24; /* Vermelho do Burger King */
+    color: white;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
 
-.hero-content {
-    max-width: 600px;
-    margin: 0 auto;
+/* Estilos específicos para o carrossel */
+.carousel {
+    display: flex;
+    overflow: hidden;
 }
 
-.hero-content h1 {
-    font-size: 36px;
-    margin-bottom: 20px;
+.carousel img {
+    width: 100%;
+    display: none;
 }
 
-.btn {
-    display: inline-block;
-    background-color: #ec1c24; /* Vermelho característico do Burger King */
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
-}
-
-.btn:hover {
-    background-color: #ba0c12; /* Vermelho escuro em hover */
+/* Estilos para o cardápio */
+.menu-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
 
 .menu-item {
-    max-width: 300px;
-    margin: 0 auto 40px;
+    width: 300px;
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #fff;
 }
 
 .menu-item img {
-    max-width: 100%;
+    width: 100%;
     border-radius: 8px;
 }
 
 .menu-item h3 {
-    margin: 10px 0;
+    color: #ED1C24; /* Vermelho do Burger King */
 }
 
-.price {
-    display: block;
-    font-weight: bold;
-    color: #ec1c24; /* Vermelho característico do Burger King */
-    font-size: 20px;
-    margin-top: 5px;
-}
-
-.map {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.contact-form input,
-.contact-form textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #fff; /* Branco para contrastar */
-    border-radius: 4px;
-}
-
-.contact-form button {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    background-color: #ec1c24; /* Vermelho característico do Burger King */
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.contact-form button:hover {
-    background-color: #ba0c12; /* Vermelho escuro em hover */
-}
-
-.contact-info {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 40px;
-}
-
-.contact-item {
-    max-width: 400px;
-    padding: 20px;
-    margin: 0 20px;
-    background-color: rgba(0, 0, 0, 0.3); /* Fundo semi-transparente */
-    border-radius: 8px;
-}
-
-.contact-item h3 {
-    margin-bottom: 10px;
-}
-
-.footer-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-}
-
-.social-links {
-    display: flex;
-}
-
-.social-links li {
-    margin-right: 10px;
-}
-
-.social-links img {
-    max-width: 30px;
-    border-radius: 50%;
+.menu-item p {
+    line-height: 1.6;
 }
